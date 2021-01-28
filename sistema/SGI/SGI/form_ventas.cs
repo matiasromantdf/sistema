@@ -16,5 +16,36 @@ namespace SGI
         {
             InitializeComponent();
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+                  {
+                     e.Handled = true;
+                     SendKeys.Send("{TAB}");
+                  }
+        }
+
+        private void txt_cant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btn_agregar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                btn_agregar_Click(this, e);
+            }
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("hoahsdoas");
+        }
     }
 }
