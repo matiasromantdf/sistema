@@ -23,5 +23,12 @@ namespace SGI
           
             form_Ventas.ShowDialog();
         }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_ventas form_Ventas = new form_ventas();
+
+            form_Ventas.ShowDialog();
+        }
     }
 }

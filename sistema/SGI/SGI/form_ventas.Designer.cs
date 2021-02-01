@@ -32,6 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.datagrid_detalle = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtototal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txt_cant = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,10 +54,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtototal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_detalle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,11 +88,49 @@
             this.Codigo,
             this.Nombre,
             this.Cantidad,
+            this.Precio,
+            this.IVA,
             this.Subtototal});
-            this.datagrid_detalle.Location = new System.Drawing.Point(51, 118);
+            this.datagrid_detalle.Location = new System.Drawing.Point(68, 118);
             this.datagrid_detalle.Name = "datagrid_detalle";
             this.datagrid_detalle.Size = new System.Drawing.Size(679, 258);
             this.datagrid_detalle.TabIndex = 5;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 80;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 300;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 60;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 60;
+            // 
+            // IVA
+            // 
+            this.IVA.HeaderText = "IVA";
+            this.IVA.Name = "IVA";
+            this.IVA.Width = 60;
+            // 
+            // Subtototal
+            // 
+            this.Subtototal.HeaderText = "Subtotal";
+            this.Subtototal.Name = "Subtototal";
+            this.Subtototal.Width = 60;
             // 
             // btn_agregar
             // 
@@ -148,15 +195,15 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(630, 391);
+            this.textBox3.Location = new System.Drawing.Point(636, 384);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
+            this.textBox3.Size = new System.Drawing.Size(106, 26);
             this.textBox3.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(586, 399);
+            this.label5.Location = new System.Drawing.Point(592, 392);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 10;
@@ -238,33 +285,75 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 18;
             // 
-            // Codigo
+            // label9
             // 
-            this.Codigo.HeaderText = "codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 120;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(406, 391);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "IVA 0%";
             // 
-            // Nombre
+            // label10
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 300;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(404, 417);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "IVA 10.5%";
             // 
-            // Cantidad
+            // label11
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(406, 442);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "IVA 21%";
             // 
-            // Subtototal
+            // textBox2
             // 
-            this.Subtototal.HeaderText = "Subtotal";
-            this.Subtototal.Name = "Subtototal";
+            this.textBox2.Location = new System.Drawing.Point(469, 387);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(65, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(468, 413);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(65, 20);
+            this.textBox4.TabIndex = 23;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(468, 439);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(65, 20);
+            this.textBox5.TabIndex = 24;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(68, 389);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(149, 29);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Eliminar fila seleccionada";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // form_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
@@ -319,6 +408,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtototal;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button3;
     }
 }

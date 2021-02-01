@@ -96,7 +96,7 @@
             this.registrarPérdidaToolStripMenuItem,
             this.reportesToolStripMenuItem});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // altaNuevoArticuloToolStripMenuItem
@@ -153,7 +153,7 @@
             this.informeParaReposiciónToolStripMenuItem,
             this.estadoCCProveedoresToolStripMenuItem});
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.comprasToolStripMenuItem.Text = "Compras";
             // 
             // registrarCompraToolStripMenuItem
@@ -194,7 +194,7 @@
             this.registrarGastoToolStripMenuItem,
             this.informesToolStripMenuItem});
             this.gastosToolStripMenuItem.Name = "gastosToolStripMenuItem";
-            this.gastosToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.gastosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.gastosToolStripMenuItem.Text = "Gastos";
             // 
             // registrarGastoToolStripMenuItem
@@ -217,7 +217,7 @@
             this.reporteDeVentasToolStripMenuItem,
             this.cajaToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(143, 26);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
             // venderToolStripMenuItem
@@ -225,6 +225,7 @@
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
             this.venderToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.venderToolStripMenuItem.Text = "Vender";
+            this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
             // consultarVentaToolStripMenuItem
             // 
