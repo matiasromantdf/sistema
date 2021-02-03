@@ -99,7 +99,10 @@
     <None Include="Resources\001-caja-registradora.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vista\" />
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{0f80f956-9200-4b54-b290-a5ea020831da}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
