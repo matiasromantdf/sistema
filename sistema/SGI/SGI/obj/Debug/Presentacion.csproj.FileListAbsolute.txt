@@ -10,3 +10,8 @@ C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\Presentacion.cspr
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\Modelo.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\Modelo.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\AccesoDatos.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\AccesoDatos.pdb

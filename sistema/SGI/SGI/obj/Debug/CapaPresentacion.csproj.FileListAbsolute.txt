@@ -1,0 +1,17 @@
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\SGI.exe.config
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\SGI.exe
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\SGI.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\Modelo.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\AccesoDatos.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\Modelo.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\bin\Debug\AccesoDatos.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\CapaPresentacion.csprojAssemblyReference.cache
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.form_altaDeArticulo.resources
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.form_ventas.resources
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.principal.resources
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.Properties.Resources.resources
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.exe
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.pdb

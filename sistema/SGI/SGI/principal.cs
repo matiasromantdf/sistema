@@ -30,5 +30,11 @@ namespace SGI
 
             form_Ventas.ShowDialog();
         }
+
+        private void altaNuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_altaDeArticulo f = new form_altaDeArticulo();
+            f.Show();
+        }
     }
 }

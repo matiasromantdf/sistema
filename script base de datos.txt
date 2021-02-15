@@ -1,0 +1,120 @@
+create table CAJA
+(
+    ID_MOV_CAJA          INTEGER               not null,
+    ACTUAL_CAJA          DECIMAL(8,2)                  ,
+    ACTUAL_COSTO         DECIMAL(8,2)                  ,
+    ACTUAL_GANANCIA      DECIMAL(8,2)                  ,
+    primary key (ID_MOV_CAJA)
+);
+
+create unique index CAJA_PK on CAJA (ID_MOV_CAJA asc);
+
+create table DATOS_LOCAL
+(
+    INGRESOS_BRUTOS      VARCHAR(100)                  ,
+    CUIT_VENDEDOR        VARCHAR(100)                  ,
+    PUNTO_DE_VENTA       VARCHAR(1)                    ,
+    INICIO_ACTIVIDADES   VARCHAR(10)                   ,
+    POSICION             VARCHAR(100)                  ,
+    DIRECCION            VARCHAR(50)                   ,
+    NOMBRE_NEGOCIO       VARCHAR(50)                   
+);
+
+create table CLIENTES
+(
+    CUIT                 VARCHAR(20)           not null,
+    APELLIDO_CLIENTE     VARCHAR(50)           not null,
+    NOMBRE_CLIENTE       VARCHAR(50)           not null,
+    DIRECCION            VARCHAR(50)           not null,
+    TELEFONO             VARCHAR(20)                   ,
+    primary key (CUIT)
+);
+
+create unique index CLIENTES_PK on CLIENTES (CUIT asc);
+
+create table PROVEEDORES
+(
+    ID_PROVEEDOR         INTEGER               not null,
+    CC_PROVEEDOR         DECIMAL(8,2)                  ,
+    NOMBRE_PROVEEDOR     VARCHAR(50)                   ,
+    primary key (ID_PROVEEDOR)
+);
+
+create unique index PROVEEDORES_PK on PROVEEDORES (ID_PROVEEDOR asc);
+
+create table TIPOS_EGRESO
+(
+    ID_TIPO_EGRESO       INTEGER               not null,
+    DESCRIPCION          VARCHAR(30)                   ,
+    primary key (ID_TIPO_EGRESO)
+);
+
+create unique index TIPOS_EGRESO_PK on TIPOS_EGRESO (ID_TIPO_EGRESO asc);
+
+create table VENTAS
+(
+    ID_VENTA             INTEGER               not null,
+    CUIT                 VARCHAR(20)           not null,
+    FECHA_VENTA          DATE                          ,
+    FACTURA              VARCHAR(50)                   ,
+    MONTO                dc(5,2)                       ,
+    CAE                  VARCHAR(100)                  ,
+    primary key (ID_VENTA),
+    foreign key  (CUIT)
+       references CLIENTES (CUIT)
+);
+
+create unique index VENTAS_PK on VENTAS (ID_VENTA asc);
+
+create index RELATION_38_FK on VENTAS (CUIT asc);
+
+create table ARTICULOS
+(
+    COD_ARTICULO         INTEGER               not null,
+    ID_PROVEEDOR         INTEGER               not null,
+    DESCR_ARTICULO       va(50)                not null,
+    COSTO_ARTICULO       DECIMAL(5,2)          not null,
+    PRECIO_ARTICULO      DECIMAL(5,2)          not null,
+    STOCK_ARTICULO       INTEGER               not null,
+    UNIDAD_MEDIDA        va(10)                not null,
+    REPOSICION_ARTICULO  INTEGER                       ,
+    primary key (COD_ARTICULO),
+    foreign key  (ID_PROVEEDOR)
+       references PROVEEDORES (ID_PROVEEDOR)
+);
+
+create unique index ARTICULOS_PK on ARTICULOS (COD_ARTICULO asc);
+
+create index RELATION_54_FK on ARTICULOS (ID_PROVEEDOR asc);
+
+create table DETALLE_VENTA
+(
+    ID_VENTA             INTEGER               not null,
+    COD_ARTICULO         INTEGER               not null,
+    CANTIDAD             INTEGER                       ,
+    SUBTOTAL             dc(5,2)                       ,
+    foreign key  (ID_VENTA)
+       references VENTAS (ID_VENTA),
+    foreign key  (COD_ARTICULO)
+       references ARTICULOS (COD_ARTICULO)
+);
+
+create index RELATION_40_FK on DETALLE_VENTA (ID_VENTA asc);
+
+create index RELATION_41_FK on DETALLE_VENTA (COD_ARTICULO asc);
+
+create table EGRESOS
+(
+    ID_EGRESO            INTEGER               not null,
+    ID_TIPO_EGRESO       INTEGER               not null,
+    FECHA_EGRESO         date                  not null,
+    MONTO_EGRESO         DECIMAL(8,2)                  ,
+    primary key (ID_EGRESO),
+    foreign key  (ID_TIPO_EGRESO)
+       references TIPOS_EGRESO (ID_TIPO_EGRESO)
+);
+
+create unique index EGRESOS_PK on EGRESOS (ID_EGRESO asc);
+
+create index RELATION_69_FK on EGRESOS (ID_TIPO_EGRESO asc);
+

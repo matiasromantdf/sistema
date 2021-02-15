@@ -104,6 +104,7 @@
             this.altaNuevoArticuloToolStripMenuItem.Name = "altaNuevoArticuloToolStripMenuItem";
             this.altaNuevoArticuloToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.altaNuevoArticuloToolStripMenuItem.Text = "Alta nuevo articulo";
+            this.altaNuevoArticuloToolStripMenuItem.Click += new System.EventHandler(this.altaNuevoArticuloToolStripMenuItem_Click);
             // 
             // modificarArtículoToolStripMenuItem
             // 
