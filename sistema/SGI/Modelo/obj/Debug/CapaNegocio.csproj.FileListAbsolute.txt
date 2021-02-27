@@ -1,9 +1,9 @@
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\Modelo.dll
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\Modelo.pdb
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\Modelo.dll
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\Modelo.pdb
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\AccesoDatos.dll
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\AccesoDatos.pdb
 C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\CapaNegocio.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\CapaNegocio.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\CapaDatos.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\bin\Debug\CapaDatos.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\CapaNegocio.dll
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\Modelo\obj\Debug\CapaNegocio.pdb

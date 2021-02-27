@@ -7,7 +7,7 @@ namespace SGI
     
     public partial class form_altaDeArticulo : Form
     {
-        Articulo_CN obj_cn_articulo;
+        Articulo_CN articulo;
         
         public form_altaDeArticulo()
         {
@@ -22,9 +22,10 @@ namespace SGI
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            obj_cn_articulo = new Articulo_CN();
-            MessageBox.Show(
-            obj_cn_articulo.insertar(
+            articulo = new Articulo_CN();
+           
+            string respuesta=
+            articulo.nuevo(
                 txt_cod.Text,
                 txt_prov.Text,
                 txt_descripcion.Text,
@@ -32,7 +33,8 @@ namespace SGI
                 txt_precio.Text,
                 txt_iva.Text,
                 txt_stock.Text,
-                txt_repo.Text));
+                txt_repo.Text);
+            MessageBox.Show(respuesta);
                 
         }
     }

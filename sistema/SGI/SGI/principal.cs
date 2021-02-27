@@ -36,5 +36,37 @@ namespace SGI
             form_altaDeArticulo f = new form_altaDeArticulo();
             f.Show();
         }
+
+        private void eliminarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_eliminarArticulo f = new form_eliminarArticulo();
+            f.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaNuevoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_nuevoProveedor f = new form_nuevoProveedor();
+            f.Show();
+        }
+
+        private void registraPagoAProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

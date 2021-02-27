@@ -53,7 +53,7 @@
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_num_venta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -79,7 +79,9 @@
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(166, 20);
             this.txt_codigo.TabIndex = 1;
+            this.txt_codigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_codigo_KeyDown);
             this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txt_codigo.Leave += new System.EventHandler(this.txt_codigo_Leave);
             // 
             // datagrid_detalle
             // 
@@ -182,6 +184,7 @@
             this.button1.Size = new System.Drawing.Size(58, 39);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -277,13 +280,13 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "N° venta";
             // 
-            // textBox1
+            // txt_num_venta
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(714, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 18;
+            this.txt_num_venta.Enabled = false;
+            this.txt_num_venta.Location = new System.Drawing.Point(714, 63);
+            this.txt_num_venta.Name = "txt_num_venta";
+            this.txt_num_venta.Size = new System.Drawing.Size(100, 20);
+            this.txt_num_venta.TabIndex = 18;
             // 
             // label9
             // 
@@ -346,6 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox5);
@@ -354,7 +358,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_num_venta);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Precio);
@@ -378,6 +382,8 @@
             this.Name = "form_ventas";
             this.ShowInTaskbar = false;
             this.Text = "ventas";
+            this.Load += new System.EventHandler(this.form_ventas_Load);
+            this.Enter += new System.EventHandler(this.form_ventas_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_detalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -387,10 +393,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.DataGridView datagrid_detalle;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.TextBox txt_cant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_NombreDeArt;
         private System.Windows.Forms.Button button1;
@@ -404,7 +408,7 @@
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_num_venta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -418,5 +422,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox txt_codigo;
+        public System.Windows.Forms.TextBox txt_cant;
     }
 }

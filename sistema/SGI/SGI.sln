@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "AccesoDatos\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "Modelo\CapaNegocio.csproj", "{0F80F956-9200-4B54-B290-A5EA020831DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "facturar", "..\..\..\proyecyo facturacion\facturar\facturar\facturar.csproj", "{BF17DF21-7734-41F4-A69E-928AA54DB14D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{0F80F956-9200-4B54-B290-A5EA020831DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F80F956-9200-4B54-B290-A5EA020831DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F80F956-9200-4B54-B290-A5EA020831DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF17DF21-7734-41F4-A69E-928AA54DB14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF17DF21-7734-41F4-A69E-928AA54DB14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF17DF21-7734-41F4-A69E-928AA54DB14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF17DF21-7734-41F4-A69E-928AA54DB14D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

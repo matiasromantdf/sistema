@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace CapaDatos
 {
     public class Conexion
     {
-        private SqlConnection ObjConexion = new SqlConnection("Data Source=NOTEBOOKPAPI\\SQLEXPRESS;" +
-               "Initial Catalog=sistema;" +
-               "Integrated Security = True" +
-               "");
+        SqlConnection ObjConexion = new SqlConnection(ConfigurationManager.ConnectionStrings["cadenaConexion"].ConnectionString);
 
         public SqlConnection conectar()
         {
@@ -23,7 +21,9 @@ namespace CapaDatos
         }
         public void cerrarConexion()
         {
+            
             ObjConexion.Close();
+           
         }
         
     }
