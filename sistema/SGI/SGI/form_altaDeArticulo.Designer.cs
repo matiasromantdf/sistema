@@ -30,7 +30,6 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.txt_cod = new System.Windows.Forms.TextBox();
-            this.txt_prov = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.txt_repo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.combo_proveedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -62,13 +62,6 @@
             this.txt_cod.Name = "txt_cod";
             this.txt_cod.Size = new System.Drawing.Size(170, 20);
             this.txt_cod.TabIndex = 2;
-            // 
-            // txt_prov
-            // 
-            this.txt_prov.Location = new System.Drawing.Point(83, 60);
-            this.txt_prov.Name = "txt_prov";
-            this.txt_prov.Size = new System.Drawing.Size(100, 20);
-            this.txt_prov.TabIndex = 4;
             // 
             // label1
             // 
@@ -185,11 +178,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // combo_proveedor
+            // 
+            this.combo_proveedor.FormattingEnabled = true;
+            this.combo_proveedor.Location = new System.Drawing.Point(83, 62);
+            this.combo_proveedor.Name = "combo_proveedor";
+            this.combo_proveedor.Size = new System.Drawing.Size(121, 21);
+            this.combo_proveedor.TabIndex = 20;
+            // 
             // form_altaDeArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 361);
+            this.Controls.Add(this.combo_proveedor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_repo);
             this.Controls.Add(this.label9);
@@ -203,7 +205,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_prov);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_cod);
             this.Controls.Add(this.label2);
@@ -221,7 +222,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_cod;
-        private System.Windows.Forms.TextBox txt_prov;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label3;
@@ -236,5 +236,6 @@
         private System.Windows.Forms.TextBox txt_repo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox combo_proveedor;
     }
 }

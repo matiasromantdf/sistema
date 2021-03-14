@@ -20,9 +20,14 @@ namespace SGI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Proveedor_CN prov = new Proveedor_CN();
-            string resultado = prov.NuevoProveedor(txt_nombreProv.Text,txt_nombreProv.Text);
+            Nproveedor prov = new Nproveedor();
+            string resultado = prov.NuevoProveedor(txt_nombreProv.Text,txt_nombreProv.Text,txt_cuit.Text);
             MessageBox.Show(resultado);
+        }
+
+        private void form_nuevoProveedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.aRTICULOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_busqueda = new System.Windows.Forms.TextBox();
             this.data_grid_resultados = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_resultados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,10 +82,10 @@
             this.data_grid_resultados.Name = "data_grid_resultados";
             this.data_grid_resultados.Size = new System.Drawing.Size(474, 150);
             this.data_grid_resultados.TabIndex = 5;
+            this.data_grid_resultados.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.data_grid_resultados_CellMouseDoubleClick);
             this.data_grid_resultados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.data_grid_resultados_KeyDown);
-            this.data_grid_resultados.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.data_grid_resultados_MouseDoubleClick);
             // 
-            // form_busqueda
+            // form_busquedaPorNombre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,13 +97,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "form_busqueda";
+            this.Name = "form_busquedaPorNombre";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "form_busqueda";
             this.Load += new System.EventHandler(this.form_busqueda_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_busqueda_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_resultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,8 +113,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-       
-        private System.Windows.Forms.BindingSource aRTICULOSBindingSource;
         private System.Windows.Forms.TextBox txt_busqueda;
         public System.Windows.Forms.DataGridView data_grid_resultados;
     }

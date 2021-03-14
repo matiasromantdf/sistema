@@ -52,7 +52,7 @@ namespace SGI
         private void txt_busqueda_TextChanged(object sender, EventArgs e)
         {
             DataTable resultadosDeBusqueda;
-            CapaNegocio.Articulo_CN articulo = new CapaNegocio.Articulo_CN();
+            CapaNegocio.Narticulo articulo = new CapaNegocio.Narticulo();
             resultadosDeBusqueda = articulo.buscarPorNombre("%" + txt_busqueda.Text + "%");
             data_grid_resultados.DataSource = resultadosDeBusqueda;
             data_grid_resultados.Columns[1].Width = 200;
@@ -60,7 +60,7 @@ namespace SGI
         private void trasladar()
         {
             form_ventas padre = Owner as form_ventas;
-            padre.txt_codigo.Text = data_grid_resultados.SelectedCells[0].Value.ToString();
+            padre.txt_codigo.Text = data_grid_resultados.CurrentRow.Cells[0].Value.ToString();
             this.Close();
             padre.txt_codigo.Focus();
         }
@@ -77,10 +77,10 @@ namespace SGI
             }
         }
 
-        private void data_grid_resultados_MouseDoubleClick(object sender, MouseEventArgs e)
+   
+        private void data_grid_resultados_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             trasladar();
-            
         }
     }
 }

@@ -33,6 +33,8 @@
             this.txt_tel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_cuit = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txt_nombreProv
@@ -44,7 +46,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 151);
+            this.button1.Location = new System.Drawing.Point(132, 174);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 38);
             this.button1.TabIndex = 1;
@@ -77,11 +79,29 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Telefono";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "CUIT";
+            // 
+            // txt_cuit
+            // 
+            this.txt_cuit.Location = new System.Drawing.Point(132, 128);
+            this.txt_cuit.Name = "txt_cuit";
+            this.txt_cuit.Size = new System.Drawing.Size(155, 20);
+            this.txt_cuit.TabIndex = 5;
+            // 
             // form_nuevoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 234);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_cuit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_tel);
@@ -89,6 +109,7 @@
             this.Controls.Add(this.txt_nombreProv);
             this.Name = "form_nuevoProveedor";
             this.Text = "form_nuevoProveedor";
+            this.Load += new System.EventHandler(this.form_nuevoProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +122,7 @@
         private System.Windows.Forms.TextBox txt_tel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_cuit;
     }
 }

@@ -12,23 +12,15 @@ namespace CapaDatos
     public class Articulo
 
     {
-        string cod_articulo; 
-        int id_proveedor_articulos;
-        string descr_articulo;
-        float costo_articulo;
-        float precio_articulo;
-        float iva;
-        int stock_articulo;
-        int reposicion_articulo;
+        public string Cod_articulo { get; set; }
+        public int Id_proveedor_articulos { get; set; }
+        public string Descr_articulo { get; set; }
+        public float Costo_articulo { get; set; }
+        public float Precio_articulo { get; set; }
+        public float Iva { get; set; }
+        public int Stock_articulo { get; set; }
+        public int Reposicion_articulo { get; set; }
 
-        public string Cod_articulo { get => cod_articulo; set => cod_articulo = value; }
-        public int Id_proveedor_articulos { get => id_proveedor_articulos; set => id_proveedor_articulos = value; }
-        public string Descr_articulo { get => descr_articulo; set => descr_articulo = value; }
-        public float Costo_articulo { get => costo_articulo; set => costo_articulo = value; }
-        public float Precio_articulo { get => precio_articulo; set => precio_articulo = value; }
-        public float Iva { get => iva; set => iva = value; }
-        public int Stock_articulo { get => stock_articulo; set => stock_articulo = value; }
-        public int Reposicion_articulo { get => reposicion_articulo; set => reposicion_articulo = value; }
 
         public Articulo(string cod_articulo, int id_proveedor_articulos, string descr_articulo, float costo_articulo, float precio_articulo, float iva, int stock_articulo, int reposicion_articulo)
         {
@@ -146,6 +138,67 @@ namespace CapaDatos
                 return false;
             }
         }
+        public string ActualizarReposicion(int cant)
+        {
+            Conexion con = new Conexion();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = con.conectar();
+            comando.CommandText = "update articulos " +
+                "set reposicion_articulo=reposicion_articulo+@cant " +
+                "where cod_articulo=@id";
+            comando.Parameters.Add("@cant", SqlDbType.Int);
+            comando.Parameters["@cant"].Value = cant;
+
+            comando.Parameters.Add("@id", SqlDbType.VarChar);
+            comando.Parameters["@id"].Value = this.Cod_articulo;
+
+            try
+            {
+                comando.ExecuteNonQuery();
+
+                return "correcto";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                con.cerrarConexion();
+            }
+
+        }
+        public string ActualizarStock(int cant)
+        {            
+            Conexion con = new Conexion();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = con.conectar();
+            comando.CommandText = "update articulos " +
+                "set stock_articulo=stock_articulo+@cant " +
+                "where cod_articulo=@id";
+            comando.Parameters.Add("@cant", SqlDbType.Int);
+            comando.Parameters["@cant"].Value = cant;
+
+            comando.Parameters.Add("@id", SqlDbType.VarChar);
+            comando.Parameters["@id"].Value = this.Cod_articulo;
+
+
+            try
+            {
+                comando.ExecuteNonQuery();
+
+                return "correcto";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                con.cerrarConexion();
+            }
+
+        }
         public Articulo Listar(string cod)
         {
             Conexion con = new Conexion();
@@ -167,7 +220,7 @@ namespace CapaDatos
              {               
                 leer.Read();
                 articulo.Cod_articulo = cod;
-                articulo.id_proveedor_articulos = leer.GetInt32(1);
+                articulo.Id_proveedor_articulos = leer.GetInt32(1);
                 articulo.Descr_articulo = leer.GetString(2);
                 articulo.Costo_articulo = (float)leer.GetDecimal(3);
                 articulo.Precio_articulo = (float)leer.GetDecimal(4);

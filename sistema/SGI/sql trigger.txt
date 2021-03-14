@@ -1,0 +1,25 @@
+CREATE TRIGGER [Trigger]
+	ON [dbo].[CAJA]
+	FOR UPDATE
+	AS
+	BEGIN
+		SET NOCOUNT ON;
+		if  (select ACTUAL_COSTO from CAJA where ID_MOV_CAJA='1')<0		
+		Begin 
+		update CAJA set 
+		ACTUAL_GANANCIA = ACTUAL_GANANCIA-ABS(ACTUAL_COSTO)
+		update caja set
+		ACTUAL_COSTO=0
+		update caja set
+		ACTUAL_CAJA=ACTUAL_COSTO+ACTUAL_GANANCIA+IVA;
+		End
+
+		if  (select ACTUAL_GANANCIA from CAJA where ID_MOV_CAJA='1')<0		
+		Begin 
+		update CAJA set 
+		ACTUAL_COSTO = ACTUAL_COSTO-ABS(ACTUAL_GANANCIA)
+		update caja set
+		ACTUAL_CAJA=ACTUAL_COSTO+ACTUAL_GANANCIA+IVA;
+		End
+
+	END

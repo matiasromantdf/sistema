@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Articulo.cs" />
     <Compile Include="DetalleVenta.cs" />

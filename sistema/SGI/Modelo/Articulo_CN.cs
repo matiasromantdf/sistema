@@ -55,10 +55,9 @@ namespace CapaNegocio
 
         }
         public float obtenerPrecio(string cod)
-        {                      
-            
-           return ObjArticulo_CD.Listar(cod).Precio_articulo;
-           
+        {
+            return ObjArticulo_CD.Listar(cod).Precio_articulo;
+
         }
         public float ObtenerIva(string cod)
         {

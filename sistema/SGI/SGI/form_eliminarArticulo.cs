@@ -21,7 +21,7 @@ namespace SGI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Articulo_CN objArticulo_CN = new Articulo_CN();
+            Narticulo objArticulo_CN = new Narticulo();
             MessageBox.Show(objArticulo_CN.eliminar(txt_codEliminar.Text));
         }
 

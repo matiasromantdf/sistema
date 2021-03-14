@@ -10,10 +10,10 @@ namespace CapaDatos
 {
     public class Proveedor
     {
-        int id_proveedor;
-        float cc_proveedor;
-        string nombre_proveedor;
-        string telefono_proveedor;
+        public int Id_proveedor { set; get; }
+        public float Cc_proveedor { set; get; }
+        public string Nombre_proveedor { set; get; }
+        public string Telefono_proveedor { set; get; }
 
         public Proveedor()
         {
@@ -26,21 +26,23 @@ namespace CapaDatos
             this.Nombre_proveedor = nombre_proveedor;
         }
 
-        public string NuevoProveedor(string nombre, string tel)
+        public string NuevoProveedor(string nombre, string tel, string cuit)
         {
             Conexion con = new Conexion();
             SqlCommand comando = new SqlCommand();
             comando.Connection = con.conectar();
             comando.CommandText = "insert into proveedores " +
                 "(cc_proveedor,nombre_proveedor,telefono_proveedor) values(@cc,@nombre,@tel)";
-            comando.Parameters.Add("@nombre", SqlDbType.VarChar);            
+            comando.Parameters.Add("@nombre", SqlDbType.VarChar);
             comando.Parameters.Add("@cc", SqlDbType.Decimal);
             comando.Parameters.Add("@tel", SqlDbType.VarChar);
+            comando.Parameters.Add("@cuit", SqlDbType.VarChar);
 
 
             comando.Parameters["@nombre"].Value = nombre;
             comando.Parameters["@cc"].Value = 0;
             comando.Parameters["@tel"].Value = tel;
+            comando.Parameters["@cuit"].Value = cuit;
 
 
             try
@@ -59,7 +61,17 @@ namespace CapaDatos
             }
 
         }
+        public DataTable ObtenerTodos()
+        {
+            DataTable tablaResultados = new DataTable();
 
+            Conexion con = new Conexion();
+            SqlCommand select = new SqlCommand("select * from proveedores");
+            select.Connection = con.conectar();           
+            SqlDataAdapter adp = new SqlDataAdapter(select);
+            adp.Fill(tablaResultados);
+            return tablaResultados;
+        }
         public string AumentarDeudaCC(float monto, int id)
         {
             Conexion con = new Conexion();
@@ -84,7 +96,7 @@ namespace CapaDatos
                 con.cerrarConexion();
             }
         }
-        public string DisminuirDeudaCC(float monto, int id)
+        public string DisminuirDeudaCC(Decimal monto, int id)
         {
             Conexion con = new Conexion();
             SqlCommand comando = new SqlCommand();
@@ -108,9 +120,6 @@ namespace CapaDatos
                 con.cerrarConexion();
             }
         }
-        public int Id_proveedor { get => id_proveedor; set => id_proveedor = value; }
-        public float Cc_proveedor { get => cc_proveedor; set => cc_proveedor = value; }
-        public string Nombre_proveedor { get => nombre_proveedor; set => nombre_proveedor = value; }
-        public string Telefono_proveedor { get => telefono_proveedor; set => telefono_proveedor = value; }
+
     }
 }

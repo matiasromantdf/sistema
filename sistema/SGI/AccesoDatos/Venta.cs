@@ -10,28 +10,56 @@ namespace CapaDatos
 {
     public class Venta
     {
-        int idVenta {set;get;}
-        DateTime fechaVenta { set; get; }
-        float costo { set; get; }
-        float bruto { set; get; }
-        List  <DetalleVenta> detalle= new List<DetalleVenta>();
+        public int IdVenta { set; get; }
+        public DateTime FechaVenta { set; get; }
+        public float Costo { set; get; }
+        public float Bruto { set; get; }
+        public float Iva { set; get; }
+
+
+
 
         public Venta()
         {
+            IdVenta = MostrarUltIdVenta() + 1;
+            FechaVenta = DateTime.Now;
+            Bruto = 0;
+            Costo = 0;
         }
-        public void AgregarDetalle(DetalleVenta det)
+              
+     
+        public string Registrar()
         {
-            detalle.Add(det);
+            Conexion con = new Conexion();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = con.conectar();
+            comando.CommandText = "Insert into ventas(fecha_venta,costo_venta,monto_venta,iva_venta) values(@fecha,@costo,@monto,@iva)";
+            comando.Parameters.Add("@fecha", SqlDbType.Date);
+            comando.Parameters.Add("@costo", SqlDbType.Decimal);
+            comando.Parameters.Add("@monto", SqlDbType.Decimal);
+            comando.Parameters.Add("@iva", SqlDbType.Decimal);
+
+            comando.Parameters["@fecha"].Value = this.FechaVenta;
+            comando.Parameters["@costo"].Value = (this.Costo);
+            comando.Parameters["@monto"].Value = (this.Bruto);
+            comando.Parameters["@iva"].Value = (this.Iva);
+
+            try
+            {
+                comando.ExecuteNonQuery();
+
+                return "correcto";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            finally
+            {
+                con.cerrarConexion();
+            }
         }
-        public Venta(int idVenta, DateTime fechaVenta, float costo, float bruto, List<DetalleVenta> detalle)
-        {
-            this.idVenta = idVenta;
-            this.fechaVenta = fechaVenta;
-            this.costo = costo;
-            this.bruto = bruto;
-            this.detalle = detalle;
-        }
-        public int mostrarUltId()
+        public int MostrarUltIdVenta()
         {
             Conexion con = new Conexion();
             SqlCommand comando = new SqlCommand("select top 1 id_venta from ventas order by id_venta desc");
