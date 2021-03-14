@@ -1,6 +1,0 @@
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\bin\Debug\CapaEntidades.dll
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\bin\Debug\CapaEntidades.pdb
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\obj\Debug\CapaEntidades.csprojAssemblyReference.cache
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\obj\Debug\CapaEntidades.csproj.CoreCompileInputs.cache
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\obj\Debug\CapaEntidades.dll
-C:\Users\mrush\Desktop\trabajo final\sistema\SGI\CapaEntidades\obj\Debug\CapaEntidades.pdb

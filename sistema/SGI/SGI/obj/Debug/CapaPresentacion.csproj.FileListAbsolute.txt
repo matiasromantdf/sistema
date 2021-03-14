@@ -43,3 +43,4 @@ C:\Users\mrush\Desktop\sistema\SGI\SGI\obj\Debug\CapaPresentacion.csproj.CopyCom
 C:\Users\mrush\Desktop\sistema\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\mrush\Desktop\sistema\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\mrush\Desktop\sistema\SGI\SGI\obj\Debug\SGI.form_compras.resources
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\SGI\obj\Debug\SGI.form_compras.resources
