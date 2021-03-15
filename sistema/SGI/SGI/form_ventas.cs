@@ -78,20 +78,21 @@ namespace SGI
         }
         private void button1_Click(object sender, EventArgs e)//boton de busqueda por nombre
         {
-            form_busquedaPorNombre f = new form_busquedaPorNombre();
+            BuscarPorNombre();
+        }
+        private void BuscarPorNombre()
+        {
+            
+            form_busquedaPorNombre f = new form_busquedaPorNombre("ventas");
             AddOwnedForm(f);
             f.ShowDialog();
             txt_codigo.Focus();
         }
-
         private void txt_codigo_KeyDown(object sender, KeyEventArgs e)//evento tecla f2 para buscar por nombre
         {
             if (e.KeyCode == Keys.F2)
             {
-                form_busquedaPorNombre f = new form_busquedaPorNombre();
-                AddOwnedForm(f);
-                f.ShowDialog();
-                txt_codigo.Focus();
+                BuscarPorNombre();
             }
         }
 

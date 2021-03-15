@@ -68,5 +68,11 @@ namespace SGI
         {
             
         }
+
+        private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form_compras f = new form_compras();
+            f.Show();
+        }
     }
 }

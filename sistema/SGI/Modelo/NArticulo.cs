@@ -18,19 +18,19 @@ namespace CapaNegocio
         Articulo ObjArticulo_CD = new CapaDatos.Articulo();
 
 
-        public string nuevo(string codigo,string proveedor, string descripcion,string costo, string precio, string iva,string stock, string reposicion)
+        public string Nuevo(string codigo,string proveedor, string descripcion,string costo, string precio, string iva)
         {
             int _proveedor= Convert.ToInt32(proveedor);
             float _costo = float.Parse(costo);
             float _precio = float.Parse(precio);
             float _iva = float.Parse(iva);
-            int _stock = Convert.ToInt32(stock);
-            int _reposicion = Convert.ToInt32(reposicion);
+            int _stock = 0;
+            int _reposicion = 0;
 
             string respuesta= ObjArticulo_CD.Nuevo(codigo, _proveedor, descripcion, _costo, _precio, _iva, _stock, _reposicion);
             return respuesta;
         }
-       public DataTable buscarPorNombre(string texto)
+       public DataTable BuscarPorNombre(string texto)
         {
            
             DataTable tabla = ObjArticulo_CD.BuscarPorNombre("%"+texto+"%");
@@ -57,7 +57,14 @@ namespace CapaNegocio
         public float obtenerPrecio(string cod)
         {
             return ObjArticulo_CD.Listar(cod).Precio_articulo;
-
+        }
+        public float obtenerCosto(string cod)
+        {
+            return ObjArticulo_CD.Listar(cod).Costo_articulo;
+        }
+        public float obtenerStock(string cod)
+        {
+            return ObjArticulo_CD.Listar(cod).Stock_articulo;
         }
         public float ObtenerIva(string cod)
         {

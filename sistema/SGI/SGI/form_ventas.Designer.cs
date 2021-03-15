@@ -216,6 +216,7 @@
             // 
             // lbl_NombreDeArt
             // 
+            this.lbl_NombreDeArt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_NombreDeArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NombreDeArt.Location = new System.Drawing.Point(122, 73);
             this.lbl_NombreDeArt.Name = "lbl_NombreDeArt";
@@ -306,6 +307,7 @@
             // 
             // lbl_Precio
             // 
+            this.lbl_Precio.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Precio.Location = new System.Drawing.Point(387, 73);
             this.lbl_Precio.Name = "lbl_Precio";

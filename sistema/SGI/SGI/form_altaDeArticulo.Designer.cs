@@ -39,10 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_iva = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_stock = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_repo = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.combo_proveedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -136,41 +132,9 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "iva";
             // 
-            // txt_stock
-            // 
-            this.txt_stock.Location = new System.Drawing.Point(83, 186);
-            this.txt_stock.Name = "txt_stock";
-            this.txt_stock.Size = new System.Drawing.Size(52, 20);
-            this.txt_stock.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 189);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Stock inicial";
-            // 
-            // txt_repo
-            // 
-            this.txt_repo.Location = new System.Drawing.Point(84, 231);
-            this.txt_repo.Name = "txt_repo";
-            this.txt_repo.Size = new System.Drawing.Size(100, 20);
-            this.txt_repo.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 234);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "reposicion";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(134, 304);
+            this.button1.Location = new System.Drawing.Point(126, 241);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 40);
             this.button1.TabIndex = 19;
@@ -193,10 +157,6 @@
             this.ClientSize = new System.Drawing.Size(464, 361);
             this.Controls.Add(this.combo_proveedor);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txt_repo);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txt_stock);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_iva);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_precio);
@@ -231,10 +191,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_stock;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_repo;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox combo_proveedor;
     }

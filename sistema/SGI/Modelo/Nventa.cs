@@ -53,7 +53,7 @@ namespace CapaNegocio
             {
                 suma += detalle[i].Subtotal;
                 costo += (detalle[i].Articulo.Costo_articulo * detalle[i].Cantidad);
-                iva += (detalle[i].Subtotal /100) * (detalle[i].Articulo.Iva);
+                iva += (detalle[i].Subtotal) - (detalle[i].Articulo.Precio_articulo*detalle[i].Cantidad);
             }
             venta.Bruto= suma;
             venta.Costo = costo;

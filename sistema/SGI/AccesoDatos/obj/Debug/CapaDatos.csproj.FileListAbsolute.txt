@@ -9,3 +9,4 @@ C:\Users\mrush\Desktop\sistema\SGI\AccesoDatos\obj\Debug\CapaDatos.csprojAssembl
 C:\Users\mrush\Desktop\sistema\SGI\AccesoDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\mrush\Desktop\sistema\SGI\AccesoDatos\obj\Debug\CapaDatos.dll
 C:\Users\mrush\Desktop\sistema\SGI\AccesoDatos\obj\Debug\CapaDatos.pdb
+C:\Users\mrush\Desktop\trabajo final\sistema\SGI\AccesoDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache

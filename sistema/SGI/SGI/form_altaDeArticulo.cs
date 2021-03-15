@@ -33,15 +33,13 @@ namespace SGI
             articulo = new Narticulo();
            
             string respuesta=
-            articulo.nuevo(
+            articulo.Nuevo(
                 txt_cod.Text,
                 combo_proveedor.SelectedValue.ToString(),
                 txt_descripcion.Text,
                 txt_costo.Text,
                 txt_precio.Text,
-                txt_iva.Text,
-                txt_stock.Text,
-                txt_repo.Text);
+                txt_iva.Text);
             MessageBox.Show(respuesta);
                 
         }

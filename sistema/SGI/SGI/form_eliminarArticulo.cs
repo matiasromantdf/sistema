@@ -34,8 +34,7 @@ namespace SGI
         {
             if (e.KeyCode == Keys.F2)
             {
-                form_busquedaPorNombre f = new form_busquedaPorNombre();
-                f.ShowDialog();
+               
             }
         }
 
@@ -43,8 +42,7 @@ namespace SGI
         {
             if (e.KeyCode == Keys.F2)
             {
-                form_busquedaPorNombre f = new form_busquedaPorNombre();
-                f.ShowDialog();
+                
             }
         }
 
