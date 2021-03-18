@@ -14,17 +14,49 @@ namespace CapaDatos
         public float Cc_proveedor { set; get; }
         public string Nombre_proveedor { set; get; }
         public string Telefono_proveedor { set; get; }
+        public string Cuit_proveedor { get; set; }
 
         public Proveedor()
         {
         }
+        public Proveedor Listar(int id_prov)
+        {
+            Conexion con = new Conexion();
+            SqlCommand seleccionar = new SqlCommand("select " +
+                "id_proveedor," +
+                "cc_proveedor," +
+                "nombre_proveedor," +
+                "telefono_proveedor," +
+                "cuit_proveedor from proveedores where id_proveedor = @cod");
+            seleccionar.Parameters.AddWithValue("@cod", id_prov);
+            seleccionar.Connection = con.conectar();
+            SqlDataReader leer;
+            leer = seleccionar.ExecuteReader();
+           
+            if (leer.HasRows)
+            {
+                leer.Read();
 
+                Id_proveedor = id_prov;
+                Cc_proveedor = (float)leer.GetDecimal(1);
+                Nombre_proveedor = leer.GetString(2);
+                Telefono_proveedor = leer.GetString(3);
+                Cuit_proveedor = leer.GetString(4);
+            }
+            else
+            {
+               return null;
+            }
+            return this;
+
+        }
         public Proveedor(int id_proveedor, float cc_proveedor, string nombre_proveedor)
         {
             this.Id_proveedor = id_proveedor;
             this.Cc_proveedor = cc_proveedor;
             this.Nombre_proveedor = nombre_proveedor;
         }
+
 
         public string NuevoProveedor(string nombre, string tel, string cuit)
         {
@@ -72,14 +104,18 @@ namespace CapaDatos
             adp.Fill(tablaResultados);
             return tablaResultados;
         }
-        public string AumentarDeudaCC(float monto, int id)
+        public string ActualizarCC(float monto, int id)
         {
             Conexion con = new Conexion();
             SqlCommand comando = new SqlCommand();
             comando.Connection = con.conectar();
-            comando.CommandText = "update proveedores set cc_proveedor=ccproveedor-@monto where id_proveedor = @id";
+            comando.CommandText = "update proveedores set cc_proveedor=cc_proveedor+@monto where id_proveedor = @id";
             comando.Parameters.Add("@monto", SqlDbType.Decimal);
             comando.Parameters.Add("@id", SqlDbType.Int);
+
+            comando.Parameters["@monto"].Value = monto;
+            comando.Parameters["@id"].Value = id;
+
 
             try
             {
@@ -95,31 +131,7 @@ namespace CapaDatos
             {
                 con.cerrarConexion();
             }
-        }
-        public string DisminuirDeudaCC(Decimal monto, int id)
-        {
-            Conexion con = new Conexion();
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = con.conectar();
-            comando.CommandText = "update proveedores set cc_proveedor=ccproveedor+@monto where id_proveedor = @id";
-            comando.Parameters.Add("@monto", SqlDbType.Decimal);
-            comando.Parameters.Add("@id", SqlDbType.Int);
-
-            try
-            {
-                comando.ExecuteNonQuery();
-
-                return "correcto";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-            finally
-            {
-                con.cerrarConexion();
-            }
-        }
+        }          
 
     }
 }

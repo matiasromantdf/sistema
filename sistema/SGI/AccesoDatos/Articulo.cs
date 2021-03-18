@@ -13,7 +13,7 @@ namespace CapaDatos
 
     {
         public string Cod_articulo { get; set; }
-        public int Id_proveedor_articulos { get; set; }
+        public Proveedor Proveedor { get; set; }
         public string Descr_articulo { get; set; }
         public float Costo_articulo { get; set; }
         public float Precio_articulo { get; set; }
@@ -22,10 +22,10 @@ namespace CapaDatos
         public int Reposicion_articulo { get; set; }
 
 
-        public Articulo(string cod_articulo, int id_proveedor_articulos, string descr_articulo, float costo_articulo, float precio_articulo, float iva, int stock_articulo, int reposicion_articulo)
+        public Articulo(string cod_articulo, Proveedor prov, string descr_articulo, float costo_articulo, float precio_articulo, float iva, int stock_articulo, int reposicion_articulo)
         {
             this.Cod_articulo = cod_articulo;
-            this.Id_proveedor_articulos = id_proveedor_articulos;
+            this.Proveedor= prov;
             this.Descr_articulo = descr_articulo;
             this.Costo_articulo = costo_articulo;
             this.Precio_articulo = precio_articulo;
@@ -201,6 +201,7 @@ namespace CapaDatos
         }
         public Articulo Listar(string cod)
         {
+            Proveedor = new Proveedor();
             Conexion con = new Conexion();
             SqlCommand seleccionar = new SqlCommand("select " +
                 "cod_articulo," +
@@ -215,24 +216,23 @@ namespace CapaDatos
             seleccionar.Connection = con.conectar();
             SqlDataReader leer;
             leer = seleccionar.ExecuteReader();
-            Articulo articulo = new Articulo();
             if (leer.HasRows)
              {               
                 leer.Read();
-                articulo.Cod_articulo = cod;
-                articulo.Id_proveedor_articulos = leer.GetInt32(1);
-                articulo.Descr_articulo = leer.GetString(2);
-                articulo.Costo_articulo = (float)leer.GetDecimal(3);
-                articulo.Precio_articulo = (float)leer.GetDecimal(4);
-                articulo.Stock_articulo = leer.GetInt32(5);
-                articulo.Reposicion_articulo = leer.GetInt32(6);
-                articulo.Iva = (float)leer.GetDecimal(7);
+                Cod_articulo = cod;
+                Proveedor = Proveedor.Listar(leer.GetInt32(1));
+                Descr_articulo = leer.GetString(2);
+                Costo_articulo = (float)leer.GetDecimal(3);
+                Precio_articulo = (float)leer.GetDecimal(4);
+                Stock_articulo = leer.GetInt32(5);
+                Reposicion_articulo = leer.GetInt32(6);
+                Iva = (float)leer.GetDecimal(7);
             }
             else
             {
-                articulo = null;
+                return null;
             }
-            return articulo;
+            return this;
         }
 
     }

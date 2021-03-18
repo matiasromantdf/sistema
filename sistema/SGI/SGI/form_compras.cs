@@ -13,7 +13,8 @@ namespace SGI
 {
     public partial class form_compras : Form
     {
-        Nproveedor proveedor;
+        Nproveedor Prove;
+        Ncompra compra = new Ncompra();
         public form_compras()
         {
             InitializeComponent();
@@ -21,8 +22,9 @@ namespace SGI
 
         private void form_compras_Load(object sender, EventArgs e)
         {
-            proveedor = new Nproveedor();
-            DataTable datos = proveedor.ObtenerTodos();
+            txt_fecha.Text = Convert.ToString(DateTime.Today.ToShortDateString());
+            Prove = new Nproveedor();
+            DataTable datos = Prove.ObtenerTodos();
             combo_proveedor.DataSource = datos;
             combo_proveedor.DisplayMember = "nombre_proveedor";
             combo_proveedor.ValueMember = "id_proveedor";
@@ -67,6 +69,53 @@ namespace SGI
                 MessageBox.Show("No existe ése artículo");
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)//nuevo Articulo
+        {
+            form_altaDeArticulo f = new form_altaDeArticulo();
+            f.ShowDialog();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            if (txt_cc.Text!="")
+            {
+                MessageBox.Show(Prove.IncrementarDeuda((int)combo_proveedor.SelectedValue, Convert.ToInt32(txt_cc.Text)));
+                               
+            }
+        }
+
+        private void btn_agregarDetalle_Click(object sender, EventArgs e)
+        {
+            /* el metodo AgregarDetalle recibe strings y luego
+             * los convierte para crear un nuevo objeto DetalleCompra 
+             * de la capa Datos
+             */
+            compra.AgregarAlDetalle(
+                txt_codigo.Text,
+                txt_cantidad.Text,
+                txt_costo.Text,
+                txt_precio.Text
+                );           
+            LlenarDGV();
+
+        }
+        private void LlenarDGV()
+        {
+            DataTable tablaDetalle = compra.ObtenerTablaDetalle();
+            dgv_detalle.Rows.Clear();
+            foreach (DataRow fila in tablaDetalle.Rows)
+            {
+                dgv_detalle.Rows.Add(
+                    fila["codigo"],
+                    fila["nombre"],
+                    fila["cantidad"],
+                    fila["costo"],
+                    fila["precio"],
+                    fila["subtotal"]
+                    );
+            }            
         }
     }
 }

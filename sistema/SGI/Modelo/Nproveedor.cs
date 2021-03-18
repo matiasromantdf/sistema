@@ -10,16 +10,26 @@ namespace CapaNegocio
 {
     public class Nproveedor
     {
-        public string NuevoProveedor(string nombre,string tel, string cuit)
+        CapaDatos.Proveedor prov = new CapaDatos.Proveedor();
+        public string NuevoProveedor(string nombre, string tel, string cuit)
         {
-            CapaDatos.Proveedor prov = new CapaDatos.Proveedor();
-            return prov.NuevoProveedor(nombre,tel,cuit);
+            return prov.NuevoProveedor(nombre, tel, cuit);
         }
         public DataTable ObtenerTodos()
         {
-            Proveedor prov = new Proveedor();
             DataTable tabla = prov.ObtenerTodos();
             return tabla;
         }
+        public string IncrementarDeuda(int id, float monto)
+        {
+            return prov.ActualizarCC(monto*-1, id);
+
+        }
+        public string DismiuirDeuda(int id, float monto)
+        {
+            return prov.ActualizarCC(monto, id);
+
+        }
+
     }
 }

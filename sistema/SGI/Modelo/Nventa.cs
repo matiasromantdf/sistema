@@ -12,7 +12,7 @@ namespace CapaNegocio
     {
         
         Venta venta = new CapaDatos.Venta();
-        List<DetalleVenta> detalle = new List<DetalleVenta>();
+        List<DetalleVenta> detalleVenta = new List<DetalleVenta>();
         Caja caja = new Caja();
 
         
@@ -27,14 +27,14 @@ namespace CapaNegocio
             tabla.Columns.Add("subtotal");
 
            
-            for (int i = 0; i < detalle.Count; i++)
+            for (int i = 0; i < detalleVenta.Count; i++)
             {
-                tabla.Rows.Add(detalle[i].Articulo.Cod_articulo,
-                    detalle[i].Articulo.Descr_articulo,
-                   detalle[i].Cantidad,
-                    detalle[i].Articulo.Precio_articulo,
-                   detalle[i].Articulo.Iva,
-                    detalle[i].Subtotal);
+                tabla.Rows.Add(detalleVenta[i].Articulo.Cod_articulo,
+                    detalleVenta[i].Articulo.Descr_articulo,
+                   detalleVenta[i].Cantidad,
+                    detalleVenta[i].Articulo.Precio_articulo,
+                   detalleVenta[i].Articulo.Iva,
+                    detalleVenta[i].Subtotal);
             }
 
             return tabla;
@@ -43,17 +43,17 @@ namespace CapaNegocio
         
         public void EliminarItem(int indice)
         {            
-            detalle.RemoveAt(indice);
+            detalleVenta.RemoveAt(indice);
         }
       
         public void CalcularBrutoyCosto()
         {
             float iva=0,suma=0,costo = 0;
-            for (int i = 0; i < detalle.Count; i++)
+            for (int i = 0; i < detalleVenta.Count; i++)
             {
-                suma += detalle[i].Subtotal;
-                costo += (detalle[i].Articulo.Costo_articulo * detalle[i].Cantidad);
-                iva += (detalle[i].Subtotal) - (detalle[i].Articulo.Precio_articulo*detalle[i].Cantidad);
+                suma += detalleVenta[i].Subtotal;
+                costo += (detalleVenta[i].Articulo.Costo_articulo * detalleVenta[i].Cantidad);
+                iva += (detalleVenta[i].Subtotal) - (detalleVenta[i].Articulo.Precio_articulo*detalleVenta[i].Cantidad);
             }
             venta.Bruto= suma;
             venta.Costo = costo;
@@ -63,21 +63,21 @@ namespace CapaNegocio
 
       public void CambiarCantidadDetalle(int indice, int cant)
         {
-            detalle[indice].Cantidad = cant;
-            detalle[indice].Subtotal = cant * detalle[indice].Articulo.Precio_articulo * ((detalle[indice].Articulo.Iva/100)+1);
+            detalleVenta[indice].Cantidad = cant;
+            detalleVenta[indice].Subtotal = cant * detalleVenta[indice].Articulo.Precio_articulo * ((detalleVenta[indice].Articulo.Iva/100)+1);
             CalcularBrutoyCosto();
         }
         public void AgregarItem(string cod, int cantidad)
         {
             bool yaExiste = false;
-            for (int i = 0; i < detalle.Count; i++)
+            for (int i = 0; i < detalleVenta.Count; i++)
             {
-                if (detalle[i].Articulo.Cod_articulo==cod)
+                if (detalleVenta[i].Articulo.Cod_articulo==cod)
                 {
-                    detalle[i].Cantidad += cantidad;
-                    detalle[i].Subtotal = detalle[i].Cantidad *
-                        detalle[i].Articulo.Precio_articulo *
-                        (((detalle[i].Articulo.Iva) / 100) + 1);
+                    detalleVenta[i].Cantidad += cantidad;
+                    detalleVenta[i].Subtotal = detalleVenta[i].Cantidad *
+                        detalleVenta[i].Articulo.Precio_articulo *
+                        (((detalleVenta[i].Articulo.Iva) / 100) + 1);
                     yaExiste = true;
                 }
             }
@@ -85,7 +85,7 @@ namespace CapaNegocio
             {
                 CapaDatos.Articulo articulo = new Articulo();
                 articulo=articulo.Listar(cod);
-                detalle.Add(
+                detalleVenta.Add(
                     new DetalleVenta(
                     venta,
                     articulo,
@@ -101,12 +101,11 @@ namespace CapaNegocio
         {
             
             venta.Registrar();
-            caja.RegistrarCaja(venta.Bruto);
             caja.RegistrarCosto(venta.Costo);
             caja.RegistrarGanancia(venta.Bruto - venta.Costo - venta.Iva);
             caja.RegistrarIva(venta.Iva);
 
-            foreach (DetalleVenta item in detalle)
+            foreach (DetalleVenta item in detalleVenta)
             {
                 item.Registrar();
                 // registrar detalle_venta
@@ -146,7 +145,7 @@ namespace CapaNegocio
 
         public void VaciarDetalle()
         {
-            detalle.Clear();
+            detalleVenta.Clear();
         }
 
 
